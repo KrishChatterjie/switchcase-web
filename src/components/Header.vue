@@ -9,13 +9,13 @@
 
     <div class="faces">
       <a href="https://github.com/KrishChatterjie">
-        <div class="face">
-          <img src="./../assets/kc.jpg" alt="Krish" />
+        <div class="face" id="krish">
+          <!-- <img src="./../assets/kc.jpg" alt="Krish" /> -->
         </div>
       </a>
       <a href="https://github.com/iamyajat">
-        <div class="face">
-          <img src="./../assets/ym.jpeg" alt="Yajat" />
+        <div class="face" id="yajat">
+          <!-- <img src="./../assets/ym1.jpeg" alt="Yajat" /> -->
         </div>
       </a>
     </div>
@@ -33,7 +33,7 @@ export default defineComponent({
 <style scoped>
 header {
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,17 +72,39 @@ a {
 
 .face {
   margin-left: 0.5rem;
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
-.face > img {
-  width: 100%;
-  border: 0.0625rem solid;
-  border-radius: 50%;
+#krish {
+  background: url('./../assets/kc1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: all 0.2s ease-out;
+}
+
+#krish:hover {
+  background-image: url('./../assets/kc2.png');
+}
+
+#yajat {
+  background: url('./../assets/yum1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transition: all 0.2s ease-out;
+}
+
+#yajat:hover {
+  background-image: url('./../assets/yum2.png');
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
   .logo {
     width: 2rem;
     height: 2rem;
@@ -94,9 +116,8 @@ a {
   }
 
   .face {
-    margin-left: 0.5rem;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
   }
 }
 </style>
