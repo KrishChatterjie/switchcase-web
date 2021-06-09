@@ -1,6 +1,6 @@
 <template>
   <!-- 10 should become activeIdx or something -->
-  <button @click="$emit('set-active', idx)" :class="[10 == idx && 'active', 'case']">{{sCase}}</button>
+  <button @click="$emit('set-active', idx)" :class="[activeIdx == idx && 'active', 'case']">{{sCase}}</button>
 </template>
 
 <script lang="ts">
@@ -10,7 +10,8 @@ export default defineComponent({
   name: 'Case',
   props: {
     sCase: String,
-    idx: Number
+    idx: Number,
+    activeIdx: Number
   },
   emits: ['set-active']
 })
@@ -32,6 +33,7 @@ export default defineComponent({
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+  white-space: pre;
 }
 
 .case.active, .case:hover {

@@ -1,7 +1,7 @@
 <template>
   <section class="cases">
     <div v-for="(sCase, index) in cases" :key="index">
-      <Case @set-active="$emit('set-active', index)" :sCase="sCase" :idx="index" />
+      <Case @set-active="$emit('set-active', index)" :sCase="sCase" :idx="index" :activeIdx="activeIdx" />
     </div>
   </section>
 </template>
@@ -13,7 +13,8 @@ import Case from './Case.vue'
 export default defineComponent({
   name: 'Cases',
   props: {
-    cases: Array
+    cases: Array,
+    activeIdx: Number
   },
   components: {
     Case

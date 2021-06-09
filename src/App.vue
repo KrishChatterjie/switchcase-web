@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <Cases @set-active="setActive" :cases="cases" />
+  <Cases @set-active="setActive" :cases="cases" :activeIdx="activeIdx"/>
   <Input @user-input="userInput"/>
 </template>
 
@@ -19,6 +19,7 @@ export default defineComponent({
   },
   data () {
     return {
+      activeIdx: 0,
       cases: [
         'UPPERCASE',
         'lowercase',
@@ -41,7 +42,7 @@ export default defineComponent({
   },
   methods: {
     setActive (id: number) {
-      console.log(this.cases[id])
+      this.activeIdx = id
     },
     userInput (text: string) {
       this.inputText = text
