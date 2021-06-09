@@ -1,18 +1,21 @@
 <template>
   <Header />
   <Cases @set-active="setActive" :cases="cases" />
+  <Input @user-input="userInput"/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Header from './components/Header.vue'
 import Cases from './components/Cases.vue'
+import Input from './components/Input.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     Header,
-    Cases
+    Cases,
+    Input
   },
   data () {
     return {
@@ -31,12 +34,18 @@ export default defineComponent({
         'uGLy cAsE',
         'G0И3 ¢4S3',
         '👏Clap👏case👏'
-      ]
+      ],
+      inputText: '',
+      outputText: ''
     }
   },
   methods: {
     setActive (id: number) {
       console.log(this.cases[id])
+    },
+    userInput (text: string) {
+      this.inputText = text
+      console.log(this.inputText)
     }
   }
 })
@@ -68,6 +77,6 @@ html, body, #app {
 }
 
 section {
-  margin-left: 1rem;
+  margin: 2rem 1rem;
 }
 </style>

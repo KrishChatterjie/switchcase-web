@@ -18,7 +18,8 @@ export default defineComponent({
 
 <style scoped>
 .case {
-  margin: 0.25rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  font-family: 'Manrope', sans-serif;
   padding: 0.25rem 0.5rem;
   border: 0.0625rem solid var(--pink-200);
   border-radius: 0.25rem;
@@ -35,5 +36,10 @@ export default defineComponent({
 
 .case.active, .case:hover {
   background-color: var(--pink-500);
+  color: #fff;
+}
+
+.case.active {
+  font-weight: bold;
 }
 </style>
