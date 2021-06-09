@@ -1,15 +1,43 @@
 <template>
   <Header />
+  <Cases @set-active="setActive" :cases="cases" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Header from './components/Header.vue'
+import Cases from './components/Cases.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    Header
+    Header,
+    Cases
+  },
+  data () {
+    return {
+      cases: [
+        'UPPERCASE',
+        'lowercase',
+        'Title Case',
+        'camelCase',
+        'PascalCase',
+        'snake_case',
+        'kebab-case',
+        'dot.case',
+        's p a c e   c a s e',
+        'TOWER CASE',
+        'esac esrever',
+        'uGLy cAsE',
+        'G0И3 ¢4S3',
+        '👏Clap👏case👏'
+      ]
+    }
+  },
+  methods: {
+    setActive (id: number) {
+      console.log(this.cases[id])
+    }
   }
 })
 </script>
@@ -37,5 +65,9 @@ html, body, #app {
   font-family: 'Manrope', sans-serif;
   background-color: var(--dark-blue);
   color: #fff;
+}
+
+section {
+  margin-left: 1rem;
 }
 </style>
