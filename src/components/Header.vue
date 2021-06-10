@@ -77,11 +77,11 @@ a {
 }
 
 #krish {
-  background: url('./../assets/kc1.png');
+  background-image: url('./../assets/kc1.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
-  transition: all 0.2s ease-out;
+  transition: background-image 0.2s ease-out;
 }
 
 #krish:hover {

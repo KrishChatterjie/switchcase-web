@@ -1,5 +1,5 @@
 <template>
-  <section class="cases">
+  <section>
     <div v-for="(sCase, index) in cases" :key="index">
       <Case @set-active="$emit('set-active', index)" :sCase="sCase" :idx="index" :activeIdx="activeIdx" />
     </div>
@@ -24,7 +24,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.cases {
+section {
   margin: 1rem;
   flex-flow: wrap;
   display: flex;

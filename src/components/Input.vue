@@ -1,11 +1,11 @@
 <template>
   <section>
     <textarea
-      class="user-text"
       placeholder="Enter your text!"
       wrap="hard"
       autofocus
       v-model="text"
+      @keydown="$emit('user-input', text)"
       @keyup="$emit('user-input', text)"/>
   </section>
 </template>
@@ -30,7 +30,7 @@ textarea {
   font-family: 'Manrope', sans-serif;
   font-size: 1rem;
   padding: 0.5rem;
-  height: clamp(10rem, 35%, 20rem);
+  height: 5rem;
   width: 100%;
   margin: 1px;
   border: 0.0625rem solid var(--teal-200);
@@ -61,6 +61,7 @@ textarea:-ms-input-placeholder {
 
   textarea {
     padding: 1rem;
+    height: 10rem;
   }
 }
 </style>

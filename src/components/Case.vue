@@ -1,6 +1,6 @@
 <template>
   <!-- 10 should become activeIdx or something -->
-  <button @click="$emit('set-active', idx)" :class="[activeIdx == idx && 'active', 'case']">{{sCase}}</button>
+  <button @click="$emit('set-active', idx)" :class="[activeIdx == idx && 'active', '']">{{sCase}}</button>
 </template>
 
 <script lang="ts">
@@ -18,7 +18,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.case {
+button {
   margin: 0.25rem 0.5rem 0.25rem 0;
   font-family: 'Manrope', sans-serif;
   padding: 0.25rem 0.5rem;
@@ -36,12 +36,12 @@ export default defineComponent({
   white-space: pre;
 }
 
-.case.active, .case:hover {
+button.active, button:hover {
   background-color: var(--pink-500);
   color: #fff;
 }
 
-.case.active {
+button.active {
   font-weight: bold;
 }
 </style>

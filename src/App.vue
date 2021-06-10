@@ -2,6 +2,7 @@
   <Header />
   <Cases @set-active="setActive" :cases="cases" :activeIdx="activeIdx"/>
   <Input @user-input="userInput"/>
+  <Output :output="outputText"/>
 </template>
 
 <script lang="ts">
@@ -9,13 +10,20 @@ import { defineComponent } from 'vue'
 import Header from './components/Header.vue'
 import Cases from './components/Cases.vue'
 import Input from './components/Input.vue'
+import Output from './components/Output.vue'
+import { convertCase } from './utils/switches'
+
+// TODO: add copy to clipboard feature on click
+// TODO: add randomize selected output button
+// TODO: add scrollbar to textarea and body
 
 export default defineComponent({
   name: 'App',
   components: {
     Header,
     Cases,
-    Input
+    Input,
+    Output
   },
   data () {
     return {
@@ -43,11 +51,16 @@ export default defineComponent({
   methods: {
     setActive (id: number) {
       this.activeIdx = id
+      this.userInput(this.inputText)
     },
     userInput (text: string) {
       this.inputText = text
-      console.log(this.inputText)
+      if (this.inputText !== '') this.outputText = convertCase(text, this.activeIdx)
+      else this.outputText = convertCase('Enter your text!', this.activeIdx)
     }
+  },
+  created () {
+    this.userInput('Enter your text!')
   }
 })
 </script>
