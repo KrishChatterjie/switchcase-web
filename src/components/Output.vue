@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div>
+    <div title="Click to copy!" @click="copyText(output)">
       {{ output }}
     </div>
   </section>
@@ -13,6 +13,13 @@ export default defineComponent({
   name: 'Output',
   props: {
     output: String
+  },
+  methods: {
+    async copyText (text: string) {
+      try {
+        await navigator.clipboard.writeText(text)
+      } catch (e) {}
+    }
   }
 })
 </script>

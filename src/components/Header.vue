@@ -77,7 +77,7 @@ a {
 }
 
 #krish {
-  background-image: url('./../assets/kc1.png');
+  background: url('./../assets/kc1.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -112,7 +112,7 @@ a {
   }
 
   .switchcase {
-    font: 2rem;
+    font-size: 2rem;
   }
 
   .face {

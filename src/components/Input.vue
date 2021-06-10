@@ -34,14 +34,13 @@ textarea {
   width: 100%;
   margin: 1px;
   border: 0.0625rem solid var(--teal-200);
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   background-color: var(--dark-blue);
   color: var(--teal-200);
 }
 
 textarea:focus {
   outline: none;
-  margin: 0;
   border: 0.125rem solid var(--pink-200);
   border-radius: 0.375rem;
 }

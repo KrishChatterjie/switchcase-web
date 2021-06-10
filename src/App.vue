@@ -13,10 +13,6 @@ import Input from './components/Input.vue'
 import Output from './components/Output.vue'
 import { convertCase } from './utils/switches'
 
-// TODO: add copy to clipboard feature on click
-// TODO: add randomize selected output button
-// TODO: add scrollbar to textarea and body
-
 export default defineComponent({
   name: 'App',
   components: {
@@ -50,7 +46,8 @@ export default defineComponent({
   },
   methods: {
     setActive (id: number) {
-      this.activeIdx = id
+      if (this.activeIdx === id) this.activeIdx = Math.floor(Math.random() * 13)
+      else this.activeIdx = id
       this.userInput(this.inputText)
     },
     userInput (text: string) {
@@ -93,4 +90,21 @@ html, body, #app {
 section {
   margin: 2rem 1rem;
 }
+
+body::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+  width: 0.375rem;
+}
+
+body::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+  background-color: var(--dark-blue);
+  background-color: hsl(211, 37%, 27%);
+}
+
+body::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--pink-200);
+}
+
 </style>

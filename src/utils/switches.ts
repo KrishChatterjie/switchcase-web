@@ -65,15 +65,15 @@ const toUglyCase = (text: string) : string => {
       if (index === 0) {
         newWord = word[index].toLowerCase()
         if (word[index].toUpperCase() === 'L') newWord = word[index].toUpperCase()
-        if (word[index].match(/[a-z]/i)) counter++
+        if (word[index].toLowerCase().match(/[a-z]/i)) counter++
       } else {
-        if (word[index].match(/[a-z]/i)) {
+        if (word[index].toLowerCase().match(/[a-z]/i)) {
           if (word[index].toLowerCase() === 'i') {
             newWord += word[index].toLowerCase()
           } else if (word[index].toUpperCase() === 'L') {
             newWord += word[index].toUpperCase()
           } else {
-            newWord += (counter % 2 === 0) ? word[index].toUpperCase() : word[index].toLowerCase()
+            newWord += (counter % 2 !== 0) ? word[index].toUpperCase() : word[index].toLowerCase()
             counter++
           }
         } else newWord += word[index]
